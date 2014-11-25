@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 	<name>geohazards-tep.github.io</name>
 	<description>geohazards-tep.github.io</description>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1</version>
 
 	<scm>
 		<connection>scm:git:git@github.com:geohazards-tep/geohazards-tep.github.io.git</connection>
