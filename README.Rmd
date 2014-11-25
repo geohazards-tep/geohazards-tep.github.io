@@ -1,0 +1,63 @@
+```{r results='asis', echo=FALSE}
+
+github.organization <- "geohazards-tep"
+source('../R/global.R')
+
+# load packages
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl"))  
+
+# global chunk options
+ opts_chunk$set(cache=FALSE, autodep=TRUE)
+
+repo.frame <- GetRepos(github.organization)
+```
+
+# Geohazards Thematic Exploitation Platform Github guide
+
+This guide is under development
+
+
+##### `r format(Sys.Date(), format="%d %B %Y")`
+
+### Meet the team
+
+```{r results='asis', echo=FALSE}
+
+members <- GetPublicMembers(github.organization)
+
+members$Members <- paste0("<a href='", members$url, "'><img style='float: left' src='", members$avatar,"' width='35' height='35'>", members$login, "</a>")
+
+kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html")
+
+```
+
+### A few facts
+
+#### Top Starred repositories
+
+```{r results='asis', echo=FALSE}
+
+stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Stars"))])
+
+stars <- stars[stars$Stars>0.0, ]
+
+kable(head(stars[order(-stars$Stars), ], 5), row.names = FALSE, format = "html")
+```
+
+#### Top Forked repositories
+
+```{r results='asis', echo=FALSE}
+
+forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Forks"))])
+
+forks <- forks[forks$Forks>0.0, ]
+
+kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html")
+```
+
+#### Programming Languages
+
+```{r results='asis', echo=FALSE}
+pie(table(as.factor(repo.frame[ ,"Language"])))
+```
