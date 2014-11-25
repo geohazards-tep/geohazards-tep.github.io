@@ -1,3 +1,5 @@
 # Geohazards Thematic Exploitation Platform Github guide
 
+`r 2+2`
+
 This guide is under development
