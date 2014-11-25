@@ -25,6 +25,13 @@ repo.frame$Chapter <- NA
 
 # EDIT here 
 # assign the chapters
+
+# Conventional InSAR
+repo.frame$Chapter[repo.frame$Project=="dcs-doris-l1-coseismic"] <- chapters[1]
+
+# Advanced InSAR
+
+# Toolboxes
 repo.frame$Chapter[repo.frame$Project=="dcs-nest-coregistration"] <- chapters[3]
 
 # build the page with reference link
