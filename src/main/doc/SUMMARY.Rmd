@@ -1,7 +1,8 @@
-```{r results='asis', echo=FALSE}
+# Summary
 
-# define the list of chapters
-chapters <- c("Conventional InSAR", "Advanced InSAR", "Toolboxes")
+* [About the platform](static/about.md)
+* [Build your own application](static/build.md)
+```{r results='asis', echo=FALSE}
 
 # global chunk options
 opts_chunk$set(cache=FALSE, autodep=TRUE)
@@ -10,31 +11,25 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 suppressMessages(library("rjson"))
 suppressMessages(library("RCurl"))
 
-github.organization <- "geohazards-tep"
 source('../R/global.R')
 
-repo.frame <- GetRepos(github.organization)
-
-# build the page with reference link
-template <- "template/repo.Rmd"
-```
-
-# Summary
-
-* [About the platform](static/about.md)
-* [Build your own application](static/build.md)
-```{r results='asis', echo=FALSE}
-repo.frame <- GetRepos(github.organization)
-
-# build the page with reference link 
-template <- "template/repo.Rmd"
+# define the organization
+github.organization <- "geohazards-tep"
 
 # define the list of chapters
 chapters <- c("Conventional InSAR", "Advanced InSAR", "Toolboxes")
+repo.frame <- GetRepos(github.organization)
+
+# define the list of chapters
 repo.frame$Chapter <- NA
 
+# EDIT here 
 # assign the chapters
 repo.frame$Chapter[repo.frame$Project=="dcs-nest-coregistration"] <- chapters[3]
+
+# build the page with reference link
+template <- "template/repo.Rmd"
+
 # create a folder for the sections of the book
 dir.create("section", showWarnings = FALSE)
 repo.frame <- repo.frame[complete.cases(repo.frame),]
