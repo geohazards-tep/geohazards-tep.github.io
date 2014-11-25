@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 	<name>geohazards-tep.github.io</name>
 	<description>geohazards-tep.github.io</description>
-	<version>0.1</version>
+	<version>0.2</version>
 
 	<scm>
 		<connection>scm:git:git@github.com:geohazards-tep/geohazards-tep.github.io.git</connection>
@@ -71,10 +71,10 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/R/src/doc</outputDirectory>
+							<outputDirectory>${project.build.directory}/main</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/src/main/doc</directory>
+									<directory>${basedir}/src/main</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
@@ -97,7 +97,8 @@
 							<executable>R</executable>
 							<arguments>
 								<argument>-e</argument>
-								<argument><![CDATA[library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/R/src/doc', out.dir='${project.build.directory}/R/doc');]]></argument>
+								<!--<argument><![CDATA[library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/R/src/doc', out.dir='${project.build.directory}/R/doc');]]></argument>-->
+								<argument><![CDATA[library(knitr); knit(input="target/main/doc/SUMMARY.Rmd", output="target/main/doc/SUMMARY.md"); knit(input="target/main/doc/README.Rmd", output="target/main/doc/README.md"); library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/main/doc', out.dir='${project.build.directory}/R/doc');]]></argument>	
 							</arguments>
 						</configuration>
 					</execution>
