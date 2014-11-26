@@ -4,8 +4,8 @@ github.organization <- 'geohazards-tep'
 repo <- 'dcs-doris-l1-coseismic'
 language <- 'Shell'
 creation <- '2014-11-25T13:46:17Z'
-update <- '2014-11-25T15:55:23Z'
-stars <- '0'
+update <- '2014-11-26T09:54:18Z'
+stars <- '1'
 forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
