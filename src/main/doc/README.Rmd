@@ -13,7 +13,7 @@ suppressMessages(library("RCurl"))
 repo.frame <- GetRepos(github.organization)
 ```
 
-# Geohazards Thematic Exploitation Platform Github guide
+# Geohazards TEP GitHub Guide
 
 This guide is under development
 
