@@ -13,7 +13,7 @@ cat(paste0("### [", github.organization, "](", url.organization, ") / [", repo, 
 
 |    Language   | Created       | Last update | Stars          | Forks          | 
 |:-------------:|:-------------:|:-----------:|:--------------:|:--------------:|
-| `r language`  | `r creation`  | `r update`  | `r link.stars` | `r link.forks` |
+#|  language  | ` creation`  | ` update`  | ` link.stars` | ` link.forks` |
 
 
 ```{r results='asis', echo=FALSE}
