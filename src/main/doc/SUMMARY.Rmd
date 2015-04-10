@@ -17,7 +17,7 @@ source('../R/global.R')
 github.organization <- "geohazards-tep"
 
 # define the list of chapters
-chapters <- c("Conventional InSAR", "Advanced InSAR", "Toolboxes")
+chapters <- c("Conventional InSAR", "Advanced InSAR", "Auxiliary", "Toolboxes")
 repo.frame <- GetRepos(github.organization)
 
 # define the list of chapters
@@ -28,11 +28,17 @@ repo.frame$Chapter <- NA
 
 # Conventional InSAR
 repo.frame$Chapter[repo.frame$Project=="dcs-doris-l1-coseismic"] <- chapters[1]
+repo.frame$Chapter[repo.frame$Project=="dcs-doris-ifg"] <- chapters[1]
+repo.frame$Chapter[repo.frame$Project=="InSAR-GMTSAR"] <- chapters[1]
+repo.frame$Chapter[repo.frame$Project=="InSAR-ROI_PAC"] <- chapters[1]
 
 # Advanced InSAR
 
+# Auxiliary
+repo.frame$Chapter[repo.frame$Project=="srtm-dem"] <- chapters[3] 
+
 # Toolboxes
-repo.frame$Chapter[repo.frame$Project=="dcs-nest-coregistration"] <- chapters[3]
+repo.frame$Chapter[repo.frame$Project=="dcs-nest-coregistration"] <- chapters[4]
 
 # build the page with reference link
 template <- "template/repo.Rmd"
@@ -41,7 +47,8 @@ template <- "template/repo.Rmd"
 dir.create("section", showWarnings = FALSE)
 repo.frame <- repo.frame[complete.cases(repo.frame),]
 
-for (i in repo.frame$Chapter) {
+#for (i in repo.frame$Chapter) {
+for (i in chapters) {
 
   chapter.frame <- repo.frame[repo.frame$Chapter==i, ]
 
