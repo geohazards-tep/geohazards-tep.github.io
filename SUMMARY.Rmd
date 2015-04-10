@@ -27,7 +27,6 @@ repo.frame$Chapter <- NA
 # assign the chapters
 
 # Conventional InSAR
-repo.frame$Chapter[repo.frame$Project=="dcs-doris-l1-coseismic"] <- chapters[1]
 repo.frame$Chapter[repo.frame$Project=="dcs-doris-ifg"] <- chapters[1]
 repo.frame$Chapter[repo.frame$Project=="InSAR-GMTSAR"] <- chapters[1]
 repo.frame$Chapter[repo.frame$Project=="InSAR-ROI_PAC"] <- chapters[1]
