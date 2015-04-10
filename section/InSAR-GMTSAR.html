@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Toolboxes | Geohazards TEP GitHub Guide</title>
+        <title>InSAR-GMTSAR | Geohazards TEP GitHub Guide</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.0.1">
@@ -20,10 +20,8 @@
         
     
     
-    <link rel="next" href="../section/dcs-nest-coregistration.html" />
     
-    
-    <link rel="prev" href="../static/about.html" />
+    <link rel="prev" href="../section/dcs-doris-l1-coseismic.html" />
     
 
         
@@ -36,7 +34,7 @@
     
 
         
-    <div class="book" data-level="3" data-basepath=".." data-revision="Fri Apr 10 2015 15:45:28 GMT+0200 (CEST)">
+    <div class="book" data-level="7.3" data-basepath=".." data-revision="Fri Apr 10 2015 15:45:28 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -88,7 +86,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3" data-path="chapter/Toolboxes.html">
+        <li class="chapter " data-level="3" data-path="chapter/Toolboxes.html">
             
                 
                     <a href="../chapter/Toolboxes.html">
@@ -170,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="section/InSAR-GMTSAR.html">
+        <li class="chapter active" data-level="4.3" data-path="section/InSAR-GMTSAR.html">
             
                 
                     <a href="../section/InSAR-GMTSAR.html">
@@ -272,7 +270,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6.3" data-path="section/InSAR-GMTSAR.html">
+        <li class="chapter active" data-level="6.3" data-path="section/InSAR-GMTSAR.html">
             
                 
                     <a href="../section/InSAR-GMTSAR.html">
@@ -338,7 +336,7 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="section/InSAR-GMTSAR.html">
+        <li class="chapter active" data-level="7.3" data-path="section/InSAR-GMTSAR.html">
             
                 
                     <a href="../section/InSAR-GMTSAR.html">
@@ -461,21 +459,135 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="toolboxes-and-auxiliary-services">Toolboxes and auxiliary services</h2>
+                        <h3 id="-geohazards-tep-https-github-com-geohazards-tep-insar-gmtsar-https-github-com-geohazards-tep-insar-gmtsar"><a href="https://github.com/geohazards-tep" target="_blank">geohazards-tep</a> / <a href="https://github.com/geohazards-tep/InSAR-GMTSAR" target="_blank">InSAR-GMTSAR</a></h3>
 <table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Project </th>
-   <th style="text-align:left;"> Description </th>
-  </tr>
- </thead>
+<thead>
+<tr>
+<th style="text-align:center">Language</th>
+<th style="text-align:center">Created</th>
+<th style="text-align:center">Last update</th>
+<th style="text-align:center">Stars</th>
+<th style="text-align:center">Forks</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> dcs-nest-coregistration </td>
-   <td style="text-align:left;"> Developer Cloud Sandbox NEST Coregistration application </td>
-  </tr>
+<tr>
+<td style="text-align:center">Shell</td>
+<td style="text-align:center">2015-03-16T10:27:22Z</td>
+<td style="text-align:center">2015-03-16T10:27:22Z</td>
+<td style="text-align:center"><a href="https://github.com/geohazards-tep/InSAR-GMTSAR/stargazers" target="_blank">0</a></td>
+<td style="text-align:center"><a href="https://github.com/geohazards-tep/InSAR-GMTSAR/network" target="_blank">0</a></td>
+</tr>
 </tbody>
 </table>
+<h1 id="cloud-processing-with-envisat-asar-data-and-gmtsar">Cloud processing with Envisat ASAR data and GMTSAR</h1>
+<p>This repository contains the application files and scripts to process a stack with one master and one or more slaves of Envisat ASAR data with <a href="http://topex.ucsd.edu/gmtsar/" target="_blank">GMTSAR</a> an InSAR processing system based on <a href="http://gmt.soest.hawaii.edu/" target="_blank">GMT</a> to process SAR images to create InSAR images, named interferograms.</p>
+<p>To run this application, you will need a Developer Cloud Sandbox that can be either requested from the ESA research &amp; service support Portal (<a href="http://eogrid.esrin.esa.int/cloudtoolbox/" target="_blank">http://eogrid.esrin.esa.int/cloudtoolbox/</a>) for ESA G-POD related projects and ESA registered user accounts, or directly from Terradue&apos;s Portal (<a href="http://www.terradue.com/partners" target="_blank">http://www.terradue.com/partners</a>), provided user registration approval.</p>
+<p>A Developer Cloud Sandbox provides Earth Science data access services, and assistance tools for a user to implement, test and validate his application. It runs in two different lifecycle modes: sandbox mode and cluster mode. Used in Sandbox mode (single virtual machine), it supports cluster simulation and user assistance functions in building the distributed application. Used in Cluster mode (collections of virtual machines), it supports the deployment and execution of the application with the power of distributed computing processing over large datasets (leveraging the Hadoop Streaming MapReduce technology).</p>
+<h3 id="installation">Installation</h3>
+<ol>
+<li><p>Log on the <code>app gmtsar</code> sandbox via SSH</p>
+</li>
+<li><p>Install GMTSAR</p>
+</li>
+</ol>
+<h3 id="getting-started">Getting started</h3>
+<p>We will process an Envisat ASAR stack with one master and two slaves  </p>
+<p>The application is described in the Application Descriptor file (application.xml), it describes two processing nodes:</p>
+<ul>
+<li>processing step <code>msd</code></li>
+<li>processing step <code>gmtsar</code></li>
+</ul>
+<h4 id="processing-step-msd">Processing step <code>msd</code></h4>
+<p>The processing step <code>msd</code> (Master, Slave, DEM) takes the three Envisat ASAR datasets references (one master and two slaves):</p>
+<ul>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf</a> (master)</li>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf</a> (slave 1)</li>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf</a> (slave 2)</li>
+</ul>
+<blockquote>
+<p>These products are also available on the European Space Agency (ESA) virtual archive available at <a href="http://eo-virtual-archive4.esa.int" target="_blank">http://eo-virtual-archive4.esa.int</a></p>
+<ol>
+<li>Open a browser on <a href="http://eo-virtual-archive4.esa.int/?bbox=13.18,42.26,13.56,42.46" target="_blank">http://eo-virtual-archive4.esa.int/?bbox=13.18,42.26,13.56,42.46</a> (this sets the AOI over L&apos;Aquila)</li>
+<li>In the &quot;Search&quot; input box write &quot;ASA_IM__0P&quot; to limit the results to Envisat ASAR Image Mode Level 0</li>
+<li>Set the track range from 79 to 79</li>
+<li>Set the start date to &quot;2007-01-01&quot; and stop date to &quot;2009-04-15</li>
+<li>Click &quot;Search&quot;</li>
+<li>Select on the left side the master: ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1</li>
+<li>Below the map, on the &quot;Related tab&quot;, you&apos;ll see candidate slave products</li>
+</ol>
+</blockquote>
+<p>The <code>msd</code> processing tasks are: </p>
+<ul>
+<li>extend the master product footprint of 0.2 degrees</li>
+<li>invoke the <a href="http://topex.ucsd.edu/gmtsar/demgen/" target="_blank">GTMSAR Generate DEM Service</a> with the extended master footprint</li>
+<li>download the GTMSAR Generate DEM Service result and publish it in the Sandbox distributed filesystem </li>
+<li>generate the inputs for the <code>gmtsar</code> processing step which are triplets of <ul>
+<li>the master SAR product reference</li>
+<li>the slave SAR product reference</li>
+<li>the DEM product reference</li>
+</ul>
+</li>
+</ul>
+<p>With the data defined in the <a href="https://github.com/Terradue/InSAR-tutorials-GMTSAR/blob/master/application.xml" target="_blank">application.xml</a>, the processing step <code>msd</code> produces the triplets:</p>
+<ul>
+<li>triplet 1<ul>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf</a> (master)</li>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf</a> (slave 1)</li>
+<li>the DEM  </li>
+</ul>
+</li>
+<li>triplet 2<ul>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf</a> (master)</li>
+<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf</a> (slave 2) </li>
+<li>the DEM </li>
+</ul>
+</li>
+</ul>
+<h4 id="processing-step-gmtsar">Processing step <code>gmtsar</code></h4>
+<p>The <code>gmtsar</code> processing step takes as inputs the references to the <code>msd</code> processing step outputs to generate the interferogram out of the Envisat ASAR stack of products.</p>
+<p>The <code>gmtsar</code> processing tasks are: </p>
+<ul>
+<li>For each triplet<ul>
+<li>Copy the generated DEM to the working directory </li>
+<li>Copy the master ASAR product to the working directory</li>
+<li>Copy the slave ASAR prodcut to the working directory</li>
+<li>Invoke GMTSAR&apos;s <code>run_envi_csh</code> script to convert to the RAW format</li>
+<li>Publish the results</li>
+</ul>
+</li>
+</ul>
+<h3 id="running-the-application">Running the application</h3>
+<h4 id="run-the-processing-steps-one-after-the-other">Run the processing steps one after the other:</h4>
+<p>From the <code>Sandbox gmtsar</code> shell, to submit the execution of the worklflow node <code>msd</code> run:</p>
+<p><code>$ ciop-simjob -f msd</code></p>
+<p>Then, with the inputs from the above <code>msd</code> execution, the <code>gmtsar</code> can be submitted: </p>
+<p><code>$ ciop-simjob -f gmtsar</code></p>
+<h4 id="run-the-processing-steps-in-a-single-step">Run the processing steps in a single step:</h4>
+<p><code>$ ciop-simwf</code></p>
+<p>This will submit the complete worflow with nodes <code>msd</code> and <code>gmtsar</code></p>
+<h4 id="run-the-processing-service-via-the-dashboard">Run the processing service via the dashboard</h4>
+<p>The Sandbox dashboard allows submitting and monitoring an OGC WPS request with a GUI</p>
+<p>On a Browser:</p>
+<ul>
+<li>Type the address <a href="http://sandbox_ip/dashboard" target="_blank">http://sandbox_ip/dashboard</a></li>
+<li>Click the Invoke tab</li>
+<li>Fill the processing request with one master and one or more slave products</li>
+<li>Submit the process by clicking &quot;Run&quot;</li>
+</ul>
+<h4 id="run-the-processing-service-via-ogc-wps">Run the processing service via OGC WPS</h4>
+<p>Using HTTP GET request with <code>curl</code></p>
+<p><code>curl http://sandbox_ip/wps/?service=WPS&amp;request=Execute&amp;version=1.0.0&amp;Identifier=&amp;storeExecuteResponse=true&amp;status=true&amp;DataInputs=sar1=http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20100502_175016_000000172089_00084_42723_0354.N1/rdf;sar2=http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20100328_175019_000000162088_00084_42222_9504.N1/rdf</code></p>
+<p>Using HTTP POST request with <code>curl</code></p>
+<p>TBW</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://support.terradue.com/projects/devel-cloud-sb/wiki" target="_blank">Developer Cloud Sandbox</a></li>
+<li><a href="http://eo-virtual-archive4.esa.int/" target="_blank">ESA Virtual Archive - access SAR data</a></li>
+<li><a href="http://topex.ucsd.edu/gmtsar/" target="_blank">GMTSAR Web Site</a></li>
+<li><a href="http://topex.ucsd.edu/gmtsar/demgen/" target="_blank">GTMSAR Generate DEM Service</a></li>
+<li><a href="http://eogrid.esrin.esa.int/cloudtoolbox/" target="_blank">SSEP CloudToolbox</a> to request a Developer Cloud Sandbox PaaS and run this application</li>
+</ul>
 
                     
                     </section>
@@ -486,10 +598,8 @@
         </div>
 
         
-        <a href="../static/about.html" class="navigation navigation-prev " aria-label="Previous page: About the platform"><i class="fa fa-angle-left"></i></a>
+        <a href="../section/dcs-doris-l1-coseismic.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: dcs-doris-l1-coseismic"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../section/dcs-nest-coregistration.html" class="navigation navigation-next " aria-label="Next page: dcs-nest-coregistration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
