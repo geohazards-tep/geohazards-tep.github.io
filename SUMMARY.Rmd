@@ -35,7 +35,7 @@ repo.frame$Chapter[repo.frame$Project=="InSAR-ROI_PAC"] <- chapters[1]
 # Advanced InSAR
 
 # Auxiliary
-repo.frame$Chapter[repo.frame$Project=="InSAR-ROI_PAC"] <- chapters[3] 
+repo.frame$Chapter[repo.frame$Project=="srtm-dem"] <- chapters[3] 
 
 # Toolboxes
 repo.frame$Chapter[repo.frame$Project=="dcs-nest-coregistration"] <- chapters[4]

@@ -7,8 +7,8 @@
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> InSAR-ROI_PAC </td>
-   <td style="text-align:left;"> Cloud processing with Envisat ASAR data and ROI_PAC </td>
+   <td style="text-align:left;"> srtm-dem </td>
+   <td style="text-align:left;"> Digital elevation model generation to use with ROI_PAC, GAMMA and GMTSAR Synthetic Aperture Radar interferometry toolboxes </td>
   </tr>
 </tbody>
 </table>
@@ -21,8 +21,8 @@
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> InSAR-ROI_PAC </td>
-   <td style="text-align:left;"> Cloud processing with Envisat ASAR data and ROI_PAC </td>
+   <td style="text-align:left;"> srtm-dem </td>
+   <td style="text-align:left;"> Digital elevation model generation to use with ROI_PAC, GAMMA and GMTSAR Synthetic Aperture Radar interferometry toolboxes </td>
   </tr>
 </tbody>
 </table>

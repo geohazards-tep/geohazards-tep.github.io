@@ -21,6 +21,10 @@
    <td style="text-align:left;"> InSAR-GMTSAR </td>
    <td style="text-align:left;"> InSAR tutorials - GMTSAR </td>
   </tr>
+  <tr>
+   <td style="text-align:left;"> InSAR-ROI_PAC </td>
+   <td style="text-align:left;"> Cloud processing with Envisat ASAR data and ROI_PAC </td>
+  </tr>
 </tbody>
 </table>
 <table>
@@ -42,6 +46,10 @@
   <tr>
    <td style="text-align:left;"> InSAR-GMTSAR </td>
    <td style="text-align:left;"> InSAR tutorials - GMTSAR </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> InSAR-ROI_PAC </td>
+   <td style="text-align:left;"> Cloud processing with Envisat ASAR data and ROI_PAC </td>
   </tr>
 </tbody>
 </table>
