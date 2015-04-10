@@ -31,6 +31,7 @@ repo.frame$Chapter[repo.frame$Project=="dcs-doris-l1-coseismic"] <- chapters[1]
 repo.frame$Chapter[repo.frame$Project=="dcs-doris-ifg"] <- chapters[1]
 repo.frame$Chapter[repo.frame$Project=="InSAR-GMTSAR"] <- chapters[1]
 repo.frame$Chapter[repo.frame$Project=="InSAR-ROI_PAC"] <- chapters[1]
+
 # Advanced InSAR
 
 # Auxiliary
@@ -46,7 +47,8 @@ template <- "template/repo.Rmd"
 dir.create("section", showWarnings = FALSE)
 repo.frame <- repo.frame[complete.cases(repo.frame),]
 
-for (i in repo.frame$Chapter) {
+#for (i in repo.frame$Chapter) {
+for (i in chapters) {
 
   chapter.frame <- repo.frame[repo.frame$Chapter==i, ]
 
