@@ -8,7 +8,8 @@
  </thead>
 <tbody>
   <tr>
-
+   <td style="text-align:left;"> dcs-stamps-ps </td>
+   <td style="text-align:left;"> Developer Cloud Sandbox for StaMPS PS processing </td>
   </tr>
 </tbody>
 </table>
@@ -21,7 +22,8 @@
  </thead>
 <tbody>
   <tr>
-
+   <td style="text-align:left;"> dcs-stamps-ps </td>
+   <td style="text-align:left;"> Developer Cloud Sandbox for StaMPS PS processing </td>
   </tr>
 </tbody>
 </table>
