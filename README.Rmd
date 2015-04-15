@@ -15,7 +15,9 @@ repo.frame <- GetRepos(github.organization)
 
 # Geohazards TEP GitHub Guide
 
-This guide provides a quick reference to the geohazards-tep GitHub organization repositories README documents.
+#### Updated: `r format(Sys.Date(), format="%d %B %Y")`
+
+This guide provides a quick reference to the geohazards-tep GitHub organization repositories.
 
 The guide is structured in chapters:
 
@@ -24,12 +26,14 @@ The guide is structured in chapters:
 * The third joins all repositories hosting conventional InSAR techniques such as interferogram generation with ROI_PAC, GMTSAR and DORIS (via Adore)
 * The fourth includes the advanced InSAR techniques such as PS processing with StaMPS
 * The fifth describes the auxiliary services of the Geohazards Exploitation Platform e.g. DEM generation for ROI_PAC, GMTSAR and Gamma
-* The sixth and final chapter provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
+* The sixth chapters includes the application built using Toolboxes such as NEST or Sentinel-1 Toolbox
+* The seventh and final chapter provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
 
-## Repository README structure
+## Repository description
 
-Each repository README is structured with several sections:
+Each repository entry is structured with several sections:
 
+* A short table including some facts about the repository e.g. last update, how many forks, how many stars
 * An introduction about the repository content and goal
 * A Getting Started section
 * The application installation steps including pre-requisites of the development version and releases
@@ -49,8 +53,7 @@ The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
 ## Want to become part of the Geohazards Exploitation Platform community?
 
-Send an expression of interest to mailto:geohazards-tep@esa.int
-
+Send an expression of interest to <a href="mailto:geohazards-tep@esa.int">geohazards-tep@esa.int</a>
 
 ##### `r format(Sys.Date(), format="%d %B %Y")`
 
@@ -62,11 +65,11 @@ members <- GetPublicMembers(github.organization)
 
 members$Members <- paste0("<a href='", members$url, "'><img style='float: left' src='", members$avatar,"' width='35' height='35'>", members$login, "</a>")
 
-kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "markdown")
+kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html")
 
 ```
 
-### A few facts
+### A few facts about the geohazards-tep GitHub organization
 
 #### Top Starred repositories
 
