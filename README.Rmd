@@ -65,7 +65,7 @@ members <- GetPublicMembers(github.organization)
 
 members$Members <- paste0("<a href='", members$url, "'><img style='float: left' src='", members$avatar,"' width='35' height='35'>", members$login, "</a>")
 
-kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html")
+kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html", escape = FALSE)
 
 ```
 
@@ -90,7 +90,7 @@ forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Forks")
 
 forks <- forks[forks$Forks>0.0, ]
 
-kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html", escape = FALSE)
+kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html")
 ```
 
 #### Programming Languages
