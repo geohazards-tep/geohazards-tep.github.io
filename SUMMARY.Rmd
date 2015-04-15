@@ -17,7 +17,7 @@ source('../R/global.R')
 github.organization <- "geohazards-tep"
 
 # define the list of chapters
-chapters <- c("Conventional InSAR", "Advanced InSAR", "Auxiliary", "Toolboxes")
+chapters <- c("Conventional InSAR", "Advanced InSAR", "Auxiliary", "Toolboxes", "Application templates")
 repo.frame <- GetRepos(github.organization)
 
 # define the list of chapters
@@ -39,6 +39,9 @@ repo.frame$Chapter[repo.frame$Project=="srtm-dem"] <- chapters[3]
 
 # Toolboxes
 repo.frame$Chapter[repo.frame$Project=="dcs-nest-coregistration"] <- chapters[4]
+
+# Application templates
+repo.frame$Chapter[repo.frame$Project=="dcs-template-insar-sentinel1"] <- chapters[5]
 
 # build the page with reference link
 template <- "template/repo.Rmd"
