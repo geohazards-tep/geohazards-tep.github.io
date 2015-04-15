@@ -55,46 +55,4 @@ The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
 Send an expression of interest to <a href="mailto:geohazards-tep@esa.int">geohazards-tep@esa.int</a>
 
-##### `r format(Sys.Date(), format="%d %B %Y")`
 
-### Meet the team
-
-```{r results='asis', echo=FALSE}
-
-members <- GetPublicMembers(github.organization)
-
-members$Members <- paste0("<a href='", members$url, "'><img style='float: left' src='", members$avatar,"' width='35' height='35'>", members$login, "</a>")
-
-kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html", escape = FALSE)
-
-```
-
-### A few facts about the geohazards-tep GitHub organization
-
-#### Top Starred repositories
-
-```{r results='asis', echo=FALSE}
-
-stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Stars"))])
-
-stars <- stars[stars$Stars>0.0, ]
-
-kable(head(stars[order(-stars$Stars), ], 5), row.names = FALSE, format = "html")
-```
-
-#### Top Forked repositories
-
-```{r results='asis', echo=FALSE}
-
-forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Forks"))])
-
-forks <- forks[forks$Forks>0.0, ]
-
-kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html")
-```
-
-#### Programming Languages
-
-```{r results='asis', echo=FALSE}
-pie(table(as.factor(repo.frame[ ,"Language"])))
-```
