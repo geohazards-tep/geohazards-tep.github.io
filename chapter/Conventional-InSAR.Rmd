@@ -8,7 +8,7 @@ Two SAR images are required to produce an interferogram; these may be obtained p
 
 Once the basic interferogram has been produced, it is commonly filtered using an adaptive power-spectrum filter to amplify the phase signal. For most quantitative applications the consecutive fringes present in the interferogram will then have to be unwrapped, which involves interpolating over the 0 to 2π phase jumps to produce a continuous deformation field. At some point, before or after unwrapping, incoherent areas of the image may be masked out. The final processing stage involves geocoding the image, which resamples the interferogram from the acquisition geometry (related to direction of satellite path) into the desired geographic projection.
 
-[[Interferometric synthetic aperture radar]] ([http://en.wikipedia.org/w/index.php?title=Interferometric_synthetic_aperture_radar&oldid=653765513 this version])
+[Interferometric synthetic aperture radar](http://en.wikipedia.org/w/index.php?title=Interferometric_synthetic_aperture_radar&oldid=653765513 "this version")
 <table>
  <thead>
   <tr>
