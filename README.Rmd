@@ -17,9 +17,7 @@ repo.frame <- GetRepos(github.organization)
 
 #### Updated: `r format(Sys.Date(), format="%d %B %Y")`
 
-This guide provides a quick reference to the geohazards-tep GitHub organization repositories.
-
-The guide is structured in chapters:
+This guide provides a quick reference to the geohazards-tep GitHub organization repositories:
 
 * The first chapter provides an overview of the ESA's Geohazards Exploitation Platform.
 * The second explains you how you can pickup on one of the existing repositories and build your own application to process Earth Observation data on the Geohazards Exploitation Platform
@@ -27,7 +25,8 @@ The guide is structured in chapters:
 * The fourth includes the advanced InSAR techniques such as PS processing with StaMPS
 * The fifth describes the auxiliary services of the Geohazards Exploitation Platform e.g. DEM generation for ROI_PAC, GMTSAR and Gamma
 * The sixth chapters includes the application built using Toolboxes such as NEST or Sentinel-1 Toolbox
-* The seventh and final chapter provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
+* The seventh provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
+* The final chapter shows who is part of this organization and a few facts
 
 ## Repository description
 
@@ -47,12 +46,10 @@ Each repository entry is structured with several sections:
 
 The platform URL is https://geohazards-tep.eo.esa.int/
 
-The Twitter account is @ESA_tep
+The Twitter account is @ESA_gep
 
 The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
 ## Want to become part of the Geohazards Exploitation Platform community?
 
 Send an expression of interest to <a href="mailto:geohazards-tep@esa.int">geohazards-tep@esa.int</a>
-
-

@@ -1,4 +1,4 @@
-## Meet the team
+#### Meet the team
 
 ```{r results='asis', echo=FALSE}
 
@@ -9,8 +9,6 @@ members$Members <- paste0("<a href='", members$url, "'><img style='float: left' 
 kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html", escape = FALSE)
 
 ```
-
-### A few facts about the geohazards-tep GitHub organization
 
 #### Top Starred repositories
 
