@@ -36,7 +36,7 @@
     
 
         
-    <div class="book" data-level="3.2" data-basepath=".." data-revision="Fri Apr 10 2015 16:04:27 GMT+0200 (CEST)">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="Wed Apr 15 2015 12:22:52 GMT+0200 (CEST)">
     
 
 <div class="book-summary">
@@ -380,120 +380,79 @@
 <tr>
 <td style="text-align:center">Shell</td>
 <td style="text-align:center">2015-03-16T10:27:22Z</td>
-<td style="text-align:center">2015-03-16T10:27:22Z</td>
+<td style="text-align:center">2015-04-15T09:55:34Z</td>
 <td style="text-align:center"><a href="https://github.com/geohazards-tep/InSAR-GMTSAR/stargazers" target="_blank">0</a></td>
 <td style="text-align:center"><a href="https://github.com/geohazards-tep/InSAR-GMTSAR/network" target="_blank">0</a></td>
 </tr>
 </tbody>
 </table>
-<h1 id="cloud-processing-with-envisat-asar-data-and-gmtsar">Cloud processing with Envisat ASAR data and GMTSAR</h1>
+<h2 id="developer-cloud-sandbox-interferogram-processing-with-gmtsar">Developer Cloud Sandbox interferogram processing with GMTSAR</h2>
 <p>This repository contains the application files and scripts to process a stack with one master and one or more slaves of Envisat ASAR data with <a href="http://topex.ucsd.edu/gmtsar/" target="_blank">GMTSAR</a> an InSAR processing system based on <a href="http://gmt.soest.hawaii.edu/" target="_blank">GMT</a> to process SAR images to create InSAR images, named interferograms.</p>
-<p>To run this application, you will need a Developer Cloud Sandbox that can be either requested from the ESA research &amp; service support Portal (<a href="http://eogrid.esrin.esa.int/cloudtoolbox/" target="_blank">http://eogrid.esrin.esa.int/cloudtoolbox/</a>) for ESA G-POD related projects and ESA registered user accounts, or directly from Terradue&apos;s Portal (<a href="http://www.terradue.com/partners" target="_blank">http://www.terradue.com/partners</a>), provided user registration approval.</p>
-<p>A Developer Cloud Sandbox provides Earth Science data access services, and assistance tools for a user to implement, test and validate his application. It runs in two different lifecycle modes: sandbox mode and cluster mode. Used in Sandbox mode (single virtual machine), it supports cluster simulation and user assistance functions in building the distributed application. Used in Cluster mode (collections of virtual machines), it supports the deployment and execution of the application with the power of distributed computing processing over large datasets (leveraging the Hadoop Streaming MapReduce technology).</p>
-<h3 id="installation">Installation</h3>
-<ol>
-<li><p>Log on the <code>app gmtsar</code> sandbox via SSH</p>
-</li>
-<li><p>Install GMTSAR</p>
-</li>
-</ol>
-<h3 id="getting-started">Getting started</h3>
-<p>We will process an Envisat ASAR stack with one master and two slaves  </p>
-<p>The application is described in the Application Descriptor file (application.xml), it describes two processing nodes:</p>
+<h2 id="quick-link">Quick link</h2>
 <ul>
-<li>processing step <code>msd</code></li>
-<li>processing step <code>gmtsar</code></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#submit">Submitting the workflow</a></li>
+<li><a href="#community">Community and Documentation</a></li>
+<li><a href="#authors">Authors</a></li>
+<li><a href="#questions">Questions, bugs, and suggestions</a></li>
+<li><a href="#license">License</a></li>
 </ul>
-<h4 id="processing-step-msd">Processing step <code>msd</code></h4>
-<p>The processing step <code>msd</code> (Master, Slave, DEM) takes the three Envisat ASAR datasets references (one master and two slaves):</p>
+<h3 id="-a-name-getting-started-a-getting-started"><a name="getting-started"></a>Getting Started</h3>
+<p>To run this application you will need a Developer Cloud Sandbox, that can be either requested from:</p>
+<ul>
+<li>ESA <a href="https://geohazards-tep.eo.esa.int" target="_blank">Geohazards Exploitation Platform</a> for GEP early adopters;</li>
+<li>ESA <a href="http://eogrid.esrin.esa.int/cloudtoolbox/" target="_blank">Research &amp; Service Support Portal</a> for ESA G-POD related projects and ESA registered user accounts</li>
+<li>From <a href="http://www.terradue.com/partners" target="_blank">Terradue&apos;s Portal</a>, provided user registration approval.</li>
+</ul>
+<p>A Developer Cloud Sandbox provides Earth Sciences data access services, and helper tools for a user to implement, test and validate a scalable data processing application. It offers a dedicated virtual machine and a Cloud Computing environment.
+The virtual machine runs in two different lifecycle modes: Sandbox mode and Cluster mode.
+Used in Sandbox mode (single virtual machine), it supports cluster simulation and user assistance functions in building the distributed application.
+Used in Cluster mode (a set of master and slave nodes), it supports the deployment and execution of the application with the power of distributed computing for data processing over large datasets (leveraging the Hadoop Streaming MapReduce technology).</p>
+<h3 id="-a-name-installation-a-installation"><a name="installation"></a>Installation</h3>
+<h4 id="pre-requisites">Pre-requisites</h4>
+<p>Install GMTSAR and csh:</p>
+<pre><code>sudo yum -y install GMTSAR csh
+</code></pre><h5 id="using-the-releases">Using the releases</h5>
+<p>Log on the developer cloud sandbox. Download the RPM package from <a href="https://github.com/geohazards-tep/InSAR-GMTSAR/releases" target="_blank">https://github.com/geohazards-tep/InSAR-GMTSAR/releases</a>.
+Install the downloaded package by running these commands in a shell:</p>
+<pre><code class="lang-bash">sudo yum -y install InSAR-GMTSAR-&lt;version&gt;-ciop.x86_64.rpm
+</code></pre>
+<h4 id="using-the-development-version">Using the development version</h4>
+<p>Log on the developer sandbox and run these commands in a shell:</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span>
+git <span class="hljs-built_in">clone</span> git@github.com:geohazards-tep/InSAR-GMTSAR.git
+git checkout develop
+<span class="hljs-built_in">cd</span> InSAR-GMTSAR
+mvn install
+</code></pre>
+<h3 id="-a-name-submit-a-submitting-the-workflow"><a name="submit"></a>Submitting the workflow</h3>
+<p>Run this command in a shell:</p>
+<pre><code class="lang-bash">ciop-run
+</code></pre>
+<p>Or invoke the Web Processing Service via the Sandbox dashboard or the <a href="https://geohazards-tep.eo.esa.int" target="_blank">Geohazards Thematic Exploitation platform</a> providing a master and one or more slave products&apos; URL, e.g.:</p>
 <ul>
 <li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf</a> (master)</li>
 <li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf</a> (slave 1)</li>
 <li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf</a> (slave 2)</li>
 </ul>
-<blockquote>
-<p>These products are also available on the European Space Agency (ESA) virtual archive available at <a href="http://eo-virtual-archive4.esa.int" target="_blank">http://eo-virtual-archive4.esa.int</a></p>
-<ol>
-<li>Open a browser on <a href="http://eo-virtual-archive4.esa.int/?bbox=13.18,42.26,13.56,42.46" target="_blank">http://eo-virtual-archive4.esa.int/?bbox=13.18,42.26,13.56,42.46</a> (this sets the AOI over L&apos;Aquila)</li>
-<li>In the &quot;Search&quot; input box write &quot;ASA_IM__0P&quot; to limit the results to Envisat ASAR Image Mode Level 0</li>
-<li>Set the track range from 79 to 79</li>
-<li>Set the start date to &quot;2007-01-01&quot; and stop date to &quot;2009-04-15</li>
-<li>Click &quot;Search&quot;</li>
-<li>Select on the left side the master: ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1</li>
-<li>Below the map, on the &quot;Related tab&quot;, you&apos;ll see candidate slave products</li>
-</ol>
-</blockquote>
-<p>The <code>msd</code> processing tasks are: </p>
+<p>To learn more and find information go to</p>
 <ul>
-<li>extend the master product footprint of 0.2 degrees</li>
-<li>invoke the <a href="http://topex.ucsd.edu/gmtsar/demgen/" target="_blank">GTMSAR Generate DEM Service</a> with the extended master footprint</li>
-<li>download the GTMSAR Generate DEM Service result and publish it in the Sandbox distributed filesystem </li>
-<li>generate the inputs for the <code>gmtsar</code> processing step which are triplets of <ul>
-<li>the master SAR product reference</li>
-<li>the slave SAR product reference</li>
-<li>the DEM product reference</li>
+<li><a href="http://docs.terradue.com/developer" target="_blank">Developer Cloud Sandbox</a> service</li>
+<li><a href="http://topex.ucsd.edu/gmtsar/" target="_blank">GMTSAR</a></li>
+<li><a href="https://geohazards-tep.eo.esa.int" target="_blank">ESA Geohazards Exploitation Platform</a></li>
 </ul>
-</li>
-</ul>
-<p>With the data defined in the <a href="https://github.com/Terradue/InSAR-tutorials-GMTSAR/blob/master/application.xml" target="_blank">application.xml</a>, the processing step <code>msd</code> produces the triplets:</p>
+<h3 id="-a-name-authors-a-authors-alphabetically"><a name="authors"></a>Authors (alphabetically)</h3>
 <ul>
-<li>triplet 1<ul>
-<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf</a> (master)</li>
-<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20080427_092430_000000172068_00079_32197_3368.N1/rdf</a> (slave 1)</li>
-<li>the DEM  </li>
+<li>Barchetta Francesco</li>
+<li>Brito Fabrice</li>
+<li>D&apos;Andria Fabio</li>
 </ul>
-</li>
-<li>triplet 2<ul>
-<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20090412_092426_000000162078_00079_37207_1556.N1/rdf</a> (master)</li>
-<li><a href="http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf" target="_blank">http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPAM20070128_092433_000000162055_00079_25684_2263.N1/rdf</a> (slave 2) </li>
-<li>the DEM </li>
-</ul>
-</li>
-</ul>
-<h4 id="processing-step-gmtsar">Processing step <code>gmtsar</code></h4>
-<p>The <code>gmtsar</code> processing step takes as inputs the references to the <code>msd</code> processing step outputs to generate the interferogram out of the Envisat ASAR stack of products.</p>
-<p>The <code>gmtsar</code> processing tasks are: </p>
-<ul>
-<li>For each triplet<ul>
-<li>Copy the generated DEM to the working directory </li>
-<li>Copy the master ASAR product to the working directory</li>
-<li>Copy the slave ASAR prodcut to the working directory</li>
-<li>Invoke GMTSAR&apos;s <code>run_envi_csh</code> script to convert to the RAW format</li>
-<li>Publish the results</li>
-</ul>
-</li>
-</ul>
-<h3 id="running-the-application">Running the application</h3>
-<h4 id="run-the-processing-steps-one-after-the-other">Run the processing steps one after the other:</h4>
-<p>From the <code>Sandbox gmtsar</code> shell, to submit the execution of the worklflow node <code>msd</code> run:</p>
-<p><code>$ ciop-simjob -f msd</code></p>
-<p>Then, with the inputs from the above <code>msd</code> execution, the <code>gmtsar</code> can be submitted: </p>
-<p><code>$ ciop-simjob -f gmtsar</code></p>
-<h4 id="run-the-processing-steps-in-a-single-step">Run the processing steps in a single step:</h4>
-<p><code>$ ciop-simwf</code></p>
-<p>This will submit the complete worflow with nodes <code>msd</code> and <code>gmtsar</code></p>
-<h4 id="run-the-processing-service-via-the-dashboard">Run the processing service via the dashboard</h4>
-<p>The Sandbox dashboard allows submitting and monitoring an OGC WPS request with a GUI</p>
-<p>On a Browser:</p>
-<ul>
-<li>Type the address <a href="http://sandbox_ip/dashboard" target="_blank">http://sandbox_ip/dashboard</a></li>
-<li>Click the Invoke tab</li>
-<li>Fill the processing request with one master and one or more slave products</li>
-<li>Submit the process by clicking &quot;Run&quot;</li>
-</ul>
-<h4 id="run-the-processing-service-via-ogc-wps">Run the processing service via OGC WPS</h4>
-<p>Using HTTP GET request with <code>curl</code></p>
-<p><code>curl http://sandbox_ip/wps/?service=WPS&amp;request=Execute&amp;version=1.0.0&amp;Identifier=&amp;storeExecuteResponse=true&amp;status=true&amp;DataInputs=sar1=http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20100502_175016_000000172089_00084_42723_0354.N1/rdf;sar2=http://catalogue.terradue.int/catalogue/search/ASA_IM__0P/ASA_IM__0CNPDE20100328_175019_000000162088_00084_42222_9504.N1/rdf</code></p>
-<p>Using HTTP POST request with <code>curl</code></p>
-<p>TBW</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://support.terradue.com/projects/devel-cloud-sb/wiki" target="_blank">Developer Cloud Sandbox</a></li>
-<li><a href="http://eo-virtual-archive4.esa.int/" target="_blank">ESA Virtual Archive - access SAR data</a></li>
-<li><a href="http://topex.ucsd.edu/gmtsar/" target="_blank">GMTSAR Web Site</a></li>
-<li><a href="http://topex.ucsd.edu/gmtsar/demgen/" target="_blank">GTMSAR Generate DEM Service</a></li>
-<li><a href="http://eogrid.esrin.esa.int/cloudtoolbox/" target="_blank">SSEP CloudToolbox</a> to request a Developer Cloud Sandbox PaaS and run this application</li>
-</ul>
+<h3 id="-a-name-questions-a-questions-bugs-and-suggestions"><a name="questions"></a>Questions, bugs, and suggestions</h3>
+<p>Please file any bugs or questions as <a href="https://github.com/geohazards-tep/InSAR-GMTSAR/issues/new" target="_blank">issues</a> or send in a pull request.</p>
+<h3 id="-a-name-license-a-license"><a name="license"></a>License</h3>
+<p>Copyright 2015 Terradue Srl</p>
+<p>Licensed under the Apache License, Version 2.0: <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a></p>
 
                     
                     </section>
