@@ -149,7 +149,7 @@
 						</goals>
 						<phase>site-deploy</phase>
 						<configuration>
-							<outputDirectory>${project.build.directory}/R/doc</outputDirectory>
+							<outputDirectory>${project.build.directory}/main/doc/_book</outputDirectory>
 							<branch>refs/heads/master</branch>
 							<noJekyll>true</noJekyll>
 						</configuration>
