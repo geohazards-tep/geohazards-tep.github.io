@@ -40,7 +40,7 @@ Each repository is then described with
 * How to submit questions, suggestions or issues
 * The software licence associated to the repository
 
-## Some useful links about the ESA Geohazards Exploitation Platform
+#### Some useful links about the ESA Geohazards Exploitation Platform
 
 The platform URL is https://geohazards-tep.eo.esa.int/
 
