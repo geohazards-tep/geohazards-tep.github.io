@@ -41,7 +41,7 @@ Each repository README is structured with several sections:
 
 ## Some useful links about the ESA Geohazards Exploitation Platform
 
-The platform URL is [https://geohazards-tep.eo.esa.int/]
+The platform URL is https://geohazards-tep.eo.esa.int/
 
 The Twitter account is @ESA_tep
 
@@ -49,7 +49,7 @@ The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
 ## Want to become part of the Geohazards Exploitation Platform community?
 
-Send an expression of interest to geohazards-tep@esa.int
+Send an expression of interest to mailto:geohazards-tep@esa.int
 
 
 ##### `r format(Sys.Date(), format="%d %B %Y")`
