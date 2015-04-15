@@ -8,7 +8,7 @@ Once the basic interferogram has been produced, it is commonly filtered using an
 
 Source: Wikipedia [Interferometric synthetic aperture radar](http://en.wikipedia.org/w/index.php?title=Interferometric_synthetic_aperture_radar&oldid=653765513 "this version")
 
-### Conventional InSAR repositories:
+#### Repositories
 <table>
  <thead>
   <tr>
