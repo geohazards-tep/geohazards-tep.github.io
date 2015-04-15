@@ -15,7 +15,41 @@ repo.frame <- GetRepos(github.organization)
 
 # Geohazards TEP GitHub Guide
 
-This guide is under development
+This guide provides a quick reference to the geohazards-tep GitHub organization repositories README documents.
+
+The guide is structured in chapters:
+
+* The first chapter provides an overview of the ESA's Geohazards Exploitation Platform.
+* The second explains you how you can pickup on one of the existing repositories and build your own application to process Earth Observation data on the Geohazards Exploitation Platform
+* The third joins all repositories hosting conventional InSAR techniques such as interferogram generation with ROI_PAC, GMTSAR and DORIS (via Adore)
+* The fourth includes the advanced InSAR techniques such as PS processing with StaMPS
+* The fifth describes the auxiliary services of the Geohazards Exploitation Platform e.g. DEM generation for ROI_PAC, GMTSAR and Gamma
+* The sixth and final chapter provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
+
+## Repository README structure
+
+Each repository README is structured with several sections:
+
+* An introduction about the repository content and goal
+* A Getting Started section
+* The application installation steps including pre-requisites of the development version and releases
+* The instructions on how to submit the processing workflow or how to use the template
+* Links to the community and documentation for the given repository
+* The list of project members having participated in the repository content
+* How to submit questions, suggestions or issues
+* The software licence associated to the repository
+
+## Some useful links about the ESA Geohazards Exploitation Platform
+
+The platform URL is [https://geohazards-tep.eo.esa.int/]
+
+The Twitter account is @ESA_tep
+
+The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
+
+## Want to become part of the Geohazards Exploitation Platform community?
+
+Send an expression of interest to geohazards-tep@esa.int
 
 
 ##### `r format(Sys.Date(), format="%d %B %Y")`
@@ -28,7 +62,7 @@ members <- GetPublicMembers(github.organization)
 
 members$Members <- paste0("<a href='", members$url, "'><img style='float: left' src='", members$avatar,"' width='35' height='35'>", members$login, "</a>")
 
-kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html")
+kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "markdown")
 
 ```
 
