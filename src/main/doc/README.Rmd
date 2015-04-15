@@ -28,9 +28,7 @@ This guide provides a quick reference to the geohazards-tep GitHub organization 
 * The seventh provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
 * The final chapter shows who is part of this organization and a few facts
 
-## Repository description
-
-Each repository entry is structured with several sections:
+Each repository is then described with
 
 * A short table including some facts about the repository e.g. last update, how many forks, how many stars
 * An introduction about the repository content and goal
@@ -42,14 +40,12 @@ Each repository entry is structured with several sections:
 * How to submit questions, suggestions or issues
 * The software licence associated to the repository
 
-## Some useful links about the ESA Geohazards Exploitation Platform
+#### Some useful links about the ESA Geohazards Exploitation Platform
 
 The platform URL is https://geohazards-tep.eo.esa.int/
 
-The Twitter account is @ESA_gep
+The Twitter account is [@ESA_gep](https://twitter.com/esa_gep)
 
 The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
-## Want to become part of the Geohazards Exploitation Platform community?
-
-Send an expression of interest to <a href="mailto:geohazards-tep@esa.int">geohazards-tep@esa.int</a>
+Want to become part of the Geohazards Exploitation Platform community? Send an expression of interest to <a href="mailto:geohazards-tep@esa.int">geohazards-tep@esa.int</a>
