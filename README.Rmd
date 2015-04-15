@@ -44,7 +44,7 @@ Each repository is then described with
 
 The platform URL is https://geohazards-tep.eo.esa.int/
 
-The Twitter account is [https://twitter.com/esa_gep](@ESA_gep)
+The Twitter account is (https://twitter.com/esa_gep)[@ESA_gep]
 
 The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
