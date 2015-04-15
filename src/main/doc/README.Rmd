@@ -15,21 +15,24 @@ repo.frame <- GetRepos(github.organization)
 
 # Geohazards TEP GitHub Guide
 
-This guide provides a quick reference to the geohazards-tep GitHub organization repositories README documents.
+#### Updated: `r format(Sys.Date(), format="%d %B %Y")`
 
-The guide is structured in chapters:
+This guide provides a quick reference to the geohazards-tep GitHub organization repositories:
 
 * The first chapter provides an overview of the ESA's Geohazards Exploitation Platform.
 * The second explains you how you can pickup on one of the existing repositories and build your own application to process Earth Observation data on the Geohazards Exploitation Platform
 * The third joins all repositories hosting conventional InSAR techniques such as interferogram generation with ROI_PAC, GMTSAR and DORIS (via Adore)
 * The fourth includes the advanced InSAR techniques such as PS processing with StaMPS
 * The fifth describes the auxiliary services of the Geohazards Exploitation Platform e.g. DEM generation for ROI_PAC, GMTSAR and Gamma
-* The sixth and final chapter provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
+* The sixth chapters includes the application built using Toolboxes such as NEST or Sentinel-1 Toolbox
+* The seventh provides application templates that can be cloned and then linked to another remote repository in the GitHub organization to build new applications
+* The final chapter shows who is part of this organization and a few facts
 
-## Repository README structure
+## Repository description
 
-Each repository README is structured with several sections:
+Each repository entry is structured with several sections:
 
+* A short table including some facts about the repository e.g. last update, how many forks, how many stars
 * An introduction about the repository content and goal
 * A Getting Started section
 * The application installation steps including pre-requisites of the development version and releases
@@ -41,7 +44,7 @@ Each repository README is structured with several sections:
 
 ## Some useful links about the ESA Geohazards Exploitation Platform
 
-The platform URL is [https://geohazards-tep.eo.esa.int/]
+The platform URL is https://geohazards-tep.eo.esa.int/
 
 The Twitter account is @ESA_tep
 
@@ -49,49 +52,4 @@ The Tumblr blog to follow is http://geohazards-tep.tumblr.com/
 
 ## Want to become part of the Geohazards Exploitation Platform community?
 
-Send an expression of interest to geohazards-tep@esa.int
-
-
-##### `r format(Sys.Date(), format="%d %B %Y")`
-
-### Meet the team
-
-```{r results='asis', echo=FALSE}
-
-members <- GetPublicMembers(github.organization)
-
-members$Members <- paste0("<a href='", members$url, "'><img style='float: left' src='", members$avatar,"' width='35' height='35'>", members$login, "</a>")
-
-kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "markdown")
-
-```
-
-### A few facts
-
-#### Top Starred repositories
-
-```{r results='asis', echo=FALSE}
-
-stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Stars"))])
-
-stars <- stars[stars$Stars>0.0, ]
-
-kable(head(stars[order(-stars$Stars), ], 5), row.names = FALSE, format = "html")
-```
-
-#### Top Forked repositories
-
-```{r results='asis', echo=FALSE}
-
-forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Forks"))])
-
-forks <- forks[forks$Forks>0.0, ]
-
-kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html")
-```
-
-#### Programming Languages
-
-```{r results='asis', echo=FALSE}
-pie(table(as.factor(repo.frame[ ,"Language"])))
-```
+Send an expression of interest to <a href="mailto:geohazards-tep@esa.int">geohazards-tep@esa.int</a>
